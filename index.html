@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <title>Premium Snack Store - Basreng &amp; Usus Crispy</title>
+  <meta name="description" content="Toko online cemilan Basreng dan Usus Crispy harga terjangkau Rp3.000 &amp; Rp5.000. Rasakan kriuk premium dengan desain minimalis modern.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdn.tailwindcss.com"></script><script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    /* Smooth scroll for internal links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Simple fade-in and slide-up animation on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom scrollbar (subtle) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(148, 163, 184, 0.7);
+      border-radius: 999px;
+    }
+
+    /* Chatbot bubble animation */
+    .chat-pulse {
+      box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(56, 189, 248, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+      }
+    }
+
+    /* Testimonial carousel */
+    .carousel-item {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .carousel-item.active {
+      opacity: 1;
+    }
+
+    /* Modal backdrop */
+    .modal-backdrop {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    /* Map placeholder */
+    .map-grid {
+      background-image: linear-gradient(90deg, rgba(148, 163, 184, 0.2) 1px, transparent 1px),
+                       linear-gradient(180deg, rgba(148, 163, 184, 0.2) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* Focus styles */
+    .focus-ring:focus-visible {
+      outline: 2px solid #0ea5e9;
+      outline-offset: 2px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full antialiased transition-colors duration-300">
+  <header class="sr-only">
+   <h1 id="site-seo-title">Premium Snack Store - Basreng &amp; Usus Crispy</h1>
+  </header>
+  <div id="app-root" class="h-full flex bg-slate-900 text-slate-100"><aside class="hidden lg:flex lg:flex-col lg:w-64 border-r border-slate-800 bg-slate-950/80 backdrop-blur-md">
+    <div class="px-6 pt-6 pb-4 flex items-center gap-3">
+     <div class="w-9 h-9 rounded-xl bg-cyan-400 flex items-center justify-center text-slate-900 font-extrabold text-xl"><span>BS</span>
+     </div>
+     <div>
+      <p id="sidebar_site_title" class="font-semibold text-sm">Premium Snack Store</p>
+      <p class="text-xs text-slate-400">Basreng &amp; Usus Crispy</p>
+     </div>
+    </div>
+    <nav aria-label="Sidebar navigation" class="mt-2 flex-1 overflow-y-auto">
+     <ul class="flex flex-col gap-1 px-4 pb-4 text-sm">
+      <li><a href="#hero" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🏠 <span>Beranda</span></a></li>
+      <li><a href="#products" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🍟 <span>Katalog Produk</span></a></li>
+      <li><a href="#promo" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🎁 <span>Promo</span></a></li>
+      <li><a href="#stats" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">📊 <span>Statistik</span></a></li>
+      <li><a href="#testimonials" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">⭐ <span>Testimoni</span></a></li>
+      <li><a href="#contact" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">✉️ <span>Kontak</span></a></li>
+     </ul>
+     <div class="mt-4 px-4 pb-6 border-t border-slate-800 pt-4 text-xs text-slate-400 space-y-2">
+      <p id="sidebar_promo_text">Gratis ongkir area tertentu &amp; promo menarik setiap minggu.</p>
+      <div class="flex items-center justify-between"><span>Mode</span> <button id="sidebar_theme_toggle" class="focus-ring flex items-center gap-1 rounded-full bg-slate-800/80 px-3 py-1 text-[11px]"> <span id="sidebar_theme_label">Dark</span> <span aria-hidden="true" class="text-yellow-300">●</span> </button>
+      </div>
+     </div>
+    </nav>
+   </aside><div class="flex-1 flex flex-col min-h-full bg-slate-900"><header class="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur-xl">
+     <nav class="max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 py-3" aria-label="Main navigation">
+      <div class="flex items-center gap-3"><button id="mobile_menu_btn" class="lg:hidden focus-ring w-9 h-9 rounded-full border border-slate-700 flex items-center justify-center text-slate-100"> <span class="sr-only">Toggle sidebar</span> <span id="mobile_menu_icon">☰</span> </button>
+       <div>
+        <p id="nav_site_title" class="font-semibold text-sm leading-tight">Premium Snack Store</p>
+        <p class="text-[11px] text-slate-400 leading-tight">Basreng &amp; Usus Crispy</p>
+       </div>
+      </div><div class="flex-1 flex items-center justify-end gap-3"><div class="hidden md:flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 w-full max-w-xs"><span aria-hidden="true" class="text-slate-400 text-xs">🔍</span> <label for="search_input" class="sr-only">Cari produk</label> <input id="search_input" type="text" placeholder="Cari Basreng, Usus..." class="bg-transparent border-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none flex-1">
+       </div><div class="flex items-center gap-1 text-[11px] border border-slate-700 rounded-full px-2 py-1 bg-slate-900/60"><button id="lang_id" class="focus-ring px-2 py-0.5 rounded-full bg-cyan-500 text-slate-900 font-semibold">ID</button> <button id="lang_en" class="focus-ring px-2 py-0.5 rounded-full text-slate-300">EN</button>
+       </div><button id="theme_toggle" class="focus-ring hidden md:flex items-center gap-1 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-[11px] text-slate-200"> <span id="theme_icon" aria-hidden="true">🌙</span> <span id="theme_label">Dark</span> </button> <button id="cart_btn" class="focus-ring flex items-center gap-1 rounded-full bg-cyan-500 px-3 py-1.5 text-xs font-semibold text-slate-900"> <span aria-hidden="true">🛒</span> <span id="cart_label">Keranjang</span> <span id="cart_count_badge" class="ml-1 inline-flex items-center justify-center rounded-full bg-slate-900/80 text-[10px] w-5 h-5 text-cyan-300">0</span> </button>
+      </div>
+     </nav><div class="md:hidden border-t border-slate-800 px-4 pb-3 pt-2 bg-slate-950/90">
+      <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 w-full"><span aria-hidden="true" class="text-slate-400 text-xs">🔍</span> <label for="search_input_mobile" class="sr-only">Cari produk</label> <input id="search_input_mobile" type="text" placeholder="Cari Basreng, Usus..." class="bg-transparent border-none text-xs text-slate-100 placeholder:text-slate-500 focus:outline-none flex-1">
+      </div>
+     </div>
+    </header><div id="mobile_sidebar" class="fixed inset-0 z-30 hidden">
+     <div class="absolute inset-0 bg-black/60"></div>
+     <aside class="relative w-64 max-w-full h-full bg-slate-950 border-r border-slate-800 flex flex-col">
+      <div class="px-6 pt-6 pb-4 flex items-center justify-between">
+       <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-cyan-400 flex items-center justify-center text-slate-900 font-extrabold text-xl"><span>BS</span>
+        </div>
+        <div>
+         <p class="font-semibold text-sm" id="mobile_site_title">Premium Snack Store</p>
+         <p class="text-xs text-slate-400">Basreng &amp; Usus Crispy</p>
+        </div>
+       </div><button id="mobile_sidebar_close" class="focus-ring w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-200"> ✕ </button>
+      </div>
+      <nav class="flex-1 overflow-y-auto px-4 pb-6">
+       <ul class="flex flex-col gap-1 text-sm">
+        <li><a href="#hero" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🏠 <span>Beranda</span></a></li>
+        <li><a href="#products" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🍟 <span>Katalog Produk</span></a></li>
+        <li><a href="#promo" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">🎁 <span>Promo</span></a></li>
+        <li><a href="#stats" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">📊 <span>Statistik</span></a></li>
+        <li><a href="#testimonials" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">⭐ <span>Testimoni</span></a></li>
+        <li><a href="#contact" class="focus-ring flex items-center gap-2 rounded-xl px-3 py-2 text-slate-200 hover:bg-slate-800/70">✉️ <span>Kontak</span></a></li>
+       </ul>
+      </nav>
+     </aside>
+    </div><main id="main_content" class="flex-1 overflow-y-auto">
+     <div class="max-w-6xl mx-auto px-4 pt-6 pb-10 space-y-12"><section id="hero" class="reveal rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 px-6 md:px-10 py-8 md:py-10 relative overflow-hidden"><div class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl"></div>
+       <div class="pointer-events-none absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-cyan-400/10 blur-2xl"></div>
+       <div class="flex flex-col md:flex-row md:items-center gap-8 relative">
+        <div class="flex-1 space-y-4">
+         <p class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-slate-950/60 px-3 py-1 text-[11px] text-cyan-200"><span aria-hidden="true">🔥</span> <span id="hero_badge_text">Diskon spesial minggu ini — stok terbatas!</span></p>
+         <h2 id="hero_heading" class="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-50 leading-tight">Basreng &amp; Usus Crispy,<br class="hidden md:block"><span class="text-cyan-400">kriuk premium</span> untuk semua momen.</h2>
+         <p id="hero_subtitle" class="text-sm md:text-base text-slate-300 max-w-xl">Nikmati cemilan pedas gurih dengan harga bersahabat: mulai dari <span class="font-semibold text-cyan-300">Rp3.000</span> dan <span class="font-semibold text-cyan-300">Rp5.000</span>. Cocok untuk nongkrong, nonton, atau kirim ke orang tersayang.</p>
+         <div class="flex flex-wrap items-center gap-3 pt-2"><button id="hero_cta_btn" class="focus-ring inline-flex items-center justify-center rounded-full bg-cyan-500 px-5 py-2 text-xs md:text-sm font-semibold text-slate-900 hover:bg-cyan-400 transition-colors"> Lihat Katalog </button> <button id="hero_video_btn" class="focus-ring inline-flex items-center justify-center rounded-full border border-slate-700 px-4 py-2 text-xs md:text-sm text-slate-100 hover:bg-slate-800"> ▶️ Lihat Video </button>
+          <div class="flex items-center gap-2 text-[11px] text-slate-400"><span aria-hidden="true">⭐</span> <span>4.9/5 dari pelanggan puas</span>
+          </div>
+         </div>
+        </div>
+        <div class="w-full md:w-64 lg:w-72 flex-shrink-0">
+ <div class="relative rounded-3xl border border-slate-800 bg-slate-950/80 px-6 py-5 flex flex-col gap-3">
+  <div class="flex items-center justify-between text-xs">
+   <p class="text-slate-300">Best Seller</p><span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] text-emerald-300"> <span class="text-[11px]">●</span> Ready </span>
+  </div>
+  <div class="w-full md:w-64 lg:w-72 flex-shrink-0">
+    <div class="relative rounded-3xl border border-slate-800 bg-slate-950/80 px-6 py-5 flex flex-col gap-3">
+            <div class="mt-1 mb-2 flex justify-center">
+            <img src="combo.jpeg " alt="Combo Basreng dan Usus" class="w-40 h-auto object-cover rounded-lg shadow-xl border border-slate-700">
+            </div>
+          <div class="space-y-1">
+           <p class="text-sm font-medium text-slate-50">Combo Basreng + Usus</p>
+           <p class="text-xs text-slate-400">Paket hemat isi 2 rasa, pedas &amp; original.</p>
+          </div>
+          <div class="flex items-center justify-between">
+           <div class="text-xs">
+            <p class="text-slate-400">Mulai</p>
+            <p class="font-semibold text-cyan-300">Rp7.000</p>
+           </div><button class="focus-ring inline-flex items-center gap-1 rounded-full bg-cyan-500/10 px-3 py-1 text-[11px] text-cyan-200 border border-cyan-500/40"> <span>+ Keranjang</span> </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section><section id="promo" class="reveal grid grid-cols-1 lg:grid-cols-3 gap-4"><article class="rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between gap-2">
+         <div>
+          <h3 class="text-sm font-semibold text-slate-50 mb-1">Promo &amp; Diskon</h3>
+          <p id="promo_text" class="text-xs text-slate-300">Beli 5 bungkus campur Basreng &amp; Usus, hanya bayar 4. Berlaku selama stok tersedia.</p>
+         </div>
+         <div class="text-3xl" aria-hidden="true">
+          🎁
+         </div>
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-[11px]"><span class="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300 border border-emerald-500/40">Cashback 10%</span> <span class="rounded-full bg-cyan-500/10 px-3 py-1 text-cyan-200 border border-cyan-500/40">Gratis stiker lucu</span>
+        </div>
+       </article><article class="rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between gap-2">
+         <div>
+          <h3 class="text-sm font-semibold text-slate-50 mb-1">Cuaca &amp; Kondisi</h3>
+          <p class="text-xs text-slate-300" id="weather_status">Perkiraan cuaca: Cerah berawan, cocok untuk ngemil di rumah.</p>
+         </div>
+         <div id="weather_icon" class="text-3xl" aria-hidden="true">
+          ⛅
+         </div>
+        </div>
+        <div class="mt-3 flex items-center justify-between text-xs text-slate-300">
+         <div>
+          <p>Suhu sekitar</p>
+          <p id="weather_temp" class="font-semibold text-cyan-300">29°C</p>
+         </div>
+         <div>
+          <p>Kelembapan</p>
+          <p id="weather_humidity" class="font-semibold text-cyan-300">70%</p>
+         </div>
+         <div>
+          <p>Rekomendasi</p>
+          <p class="font-semibold text-emerald-300 text-[11px]">Pesan pedas level 2</p>
+         </div>
+        </div>
+       </article><article id="stats" class="rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between">
+         <h3 class="text-sm font-semibold text-slate-50">Statistik Toko</h3><span class="text-2xl" aria-hidden="true">📊</span>
+        </div>
+        <div class="mt-3 grid grid-cols-3 gap-2 text-center text-xs">
+         <div class="rounded-xl bg-slate-900/80 px-2 py-2">
+          <p class="text-slate-400">Terjual</p>
+          <p id="stat_sold" class="mt-1 text-base font-semibold text-cyan-300">0</p>
+          <p class="text-[10px] text-slate-500">pak/bulan</p>
+         </div>
+         <div class="rounded-xl bg-slate-900/80 px-2 py-2">
+          <p class="text-slate-400">Pelanggan</p>
+          <p id="stat_customers" class="mt-1 text-base font-semibold text-cyan-300">0</p>
+          <p class="text-[10px] text-slate-500">aktif</p>
+         </div>
+         <div class="rounded-xl bg-slate-900/80 px-2 py-2">
+          <p class="text-slate-400">Rating</p>
+          <p id="stat_rating" class="mt-1 text-base font-semibold text-cyan-300">0</p>
+          <p class="text-[10px] text-slate-500">/5.0</p>
+         </div>
+        </div>
+       </article>
+      </section><section id="products" class="reveal space-y-4">
+       <header class="flex flex-col md:flex-row md:items-end gap-3 justify-between">
+        <div>
+         <h2 class="text-lg md:text-xl font-semibold text-slate-50">Katalog Produk</h2>
+         <p class="text-xs md:text-sm text-slate-400">Pilih cemilan favoritmu, semua harga terjangkau.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-[11px]"><button data-filter="all" class="focus-ring filter-btn rounded-full border border-cyan-500/60 bg-cyan-500/10 px-3 py-1 text-cyan-200">Semua</button> <button data-filter="basreng" class="focus-ring filter-btn rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-slate-200">Basreng</button> <button data-filter="usus" class="focus-ring filter-btn rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-slate-200">Usus Crispy</button> <button data-filter="3000" class="focus-ring filter-btn rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-slate-200">Rp3.000</button> <button data-filter="5000" class="focus-ring filter-btn rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-slate-200">Rp5.000</button>
+        </div>
+       </header>
+       <div id="product_list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+       </div>
+      </section><section id="checkout" class="reveal rounded-2xl border border-slate-800 bg-slate-950/80 px-5 md:px-6 py-5 space-y-3">
+       <header class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+         <h2 class="text-sm md:text-base font-semibold text-slate-50">Checkout (Demo)</h2>
+         <p class="text-xs text-slate-400">Simulasi proses checkout tanpa pembayaran asli.</p>
+        </div>
+        <div class="text-[11px] text-amber-300 bg-amber-500/10 border border-amber-500/40 rounded-full px-3 py-1 inline-flex items-center gap-1"><span aria-hidden="true">⚠️</span> <span>Demo - tidak memproses pembayaran sungguhan</span>
+        </div>
+       </header>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm"><div class="space-y-3">
+         <h3 class="font-medium text-slate-100">Ringkasan Pesanan</h3>
+         <div id="checkout_summary" class="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-3 space-y-2">
+          <p class="text-xs text-slate-500">Keranjang masih kosong.</p>
+         </div>
+        </div><div class="space-y-3">
+         <h3 class="font-medium text-slate-100">Data Pengiriman (Demo)</h3>
+         <form id="checkout_form" class="space-y-2">
+          <div><label for="checkout_name" class="block text-xs text-slate-300 mb-1">Nama penerima</label> <input id="checkout_name" type="text" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-100" placeholder="Nama lengkap">
+          </div>
+          <div><label for="checkout_address" class="block text-xs text-slate-300 mb-1">Alamat singkat</label> <textarea id="checkout_address" rows="2" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-100" placeholder="Contoh: Jl. Cemilan No. 5, Bandung"></textarea>
+          </div>
+          <div><label for="checkout_note" class="block text-xs text-slate-300 mb-1">Catatan (optional)</label> <input id="checkout_note" type="text" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-100" placeholder="Level pedas, dsb.">
+          </div>
+          <p class="text-[11px] text-slate-500">Tidak ada kolom kartu kredit atau password, ini hanya simulasi.</p><button type="submit" id="checkout_submit" class="focus-ring w-full rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-cyan-400"> Simulasi Pesan Sekarang </button>
+          <p id="checkout_status" class="text-[11px] text-emerald-300 mt-1 hidden">Pesanan demo berhasil disimpan (simulasi).</p>
+         </form>
+        </div>
+       </div>
+      </section><section id="testimonials" class="reveal grid grid-cols-1 lg:grid-cols-3 gap-4"><article class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 flex flex-col justify-between">
+        <header class="flex items-center justify-between gap-2 mb-2">
+         <div>
+          <h2 class="text-sm font-semibold text-slate-50">Testimoni Pengunjung</h2>
+          <p class="text-xs text-slate-400">Berputar otomatis setiap beberapa detik.</p>
+         </div><span aria-hidden="true" class="text-xl">💬</span>
+        </header>
+        <div id="testimonial_container" class="relative min-h-[80px]"></div>
+        <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+         <div class="flex gap-1"><span id="testimonial_dot_0" class="inline-block h-1.5 w-4 rounded-full bg-cyan-400"></span> <span id="testimonial_dot_1" class="inline-block h-1.5 w-4 rounded-full bg-slate-600"></span> <span id="testimonial_dot_2" class="inline-block h-1.5 w-4 rounded-full bg-slate-600"></span>
+         </div>
+         <p>Rating rata-rata <span class="font-semibold text-cyan-300">4.9/5</span></p>
+        </div>
+       </article><article class="rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-4 flex flex-col justify-between">
+        <header class="flex items-center justify-between mb-2">
+         <h2 class="text-sm font-semibold text-slate-50">Lokasi Toko (Demo)</h2><span aria-hidden="true" class="text-xl">📍</span>
+        </header>
+        <div class="relative rounded-xl border border-slate-800 bg-slate-900/80 map-grid h-40 flex items-center justify-center">
+         <div class="absolute w-10 h-10 rounded-full bg-cyan-500/80 flex items-center justify-center text-slate-900 text-lg">
+          📍
+         </div>
+         <p class="text-[11px] text-slate-300 bg-slate-950/80 px-2 py-1 rounded-full border border-slate-700">Peta demo — ganti dengan integrasi peta asli sesuai kebutuhan.</p>
+        </div>
+        <p class="mt-2 text-[11px] text-slate-400">Contoh: Bandung, Jawa Barat — melayani pengiriman area sekitar dan luar kota.</p>
+       </article>
+      </section><section id="contact" class="reveal grid grid-cols-1 lg:grid-cols-2 gap-4"><article class="rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 space-y-3">
+        <header>
+         <h2 class="text-sm md:text-base font-semibold text-slate-50">Formulir Kontak</h2>
+         <p class="text-xs text-slate-400">Tanyakan apapun seputar produk, reseller, atau kerja sama.</p>
+        </header>
+        <form id="contact_form" class="space-y-2 text-xs">
+         <div><label for="contact_name" class="block text-slate-300 mb-1">Nama</label> <input id="contact_name" type="text" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-slate-100" placeholder="Nama lengkap">
+         </div>
+         <div><label for="contact_email" class="block text-slate-300 mb-1">Email / Kontak</label> <input id="contact_email" type="text" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-slate-100" placeholder="Email atau nomor WhatsApp">
+         </div>
+         <div><label for="contact_message" class="block text-slate-300 mb-1">Pesan</label> <textarea id="contact_message" rows="3" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-slate-100" placeholder="Tulis pertanyaan atau kebutuhan Anda"></textarea>
+         </div><button type="submit" id="contact_submit" class="focus-ring rounded-full bg-cyan-500 px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-cyan-400"> Kirim Pesan </button>
+         <p id="contact_status" class="text-[11px] text-emerald-300 mt-1 hidden">Terima kasih, pesanmu sudah terkirim (simulasi).</p>
+        </form>
+       </article><article class="rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4 space-y-3">
+        <header>
+         <h2 class="text-sm md:text-base font-semibold text-slate-50">Form Saran &amp; Penilaian</h2>
+         <p class="text-xs text-slate-400">Bantu kami meningkatkan kualitas rasa &amp; layanan.</p>
+        </header>
+        <form id="feedback_form" class="space-y-2 text-xs">
+         <div><label for="feedback_rating" class="block text-slate-300 mb-1">Rating</label>
+          <div class="flex items-center gap-1 text-xl" aria-label="Pilih rating"><button type="button" data-score="1" class="focus-ring rating-star text-slate-600">★</button> <button type="button" data-score="2" class="focus-ring rating-star text-slate-600">★</button> <button type="button" data-score="3" class="focus-ring rating-star text-slate-600">★</button> <button type="button" data-score="4" class="focus-ring rating-star text-slate-600">★</button> <button type="button" data-score="5" class="focus-ring rating-star text-slate-600">★</button>
+          </div><input type="hidden" id="feedback_rating">
+         </div>
+         <div><label for="feedback_message" class="block text-slate-300 mb-1">Saran</label> <textarea id="feedback_message" rows="3" class="focus-ring w-full rounded-lg border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-slate-100" placeholder="Tuliskan saran, kritik, atau hal yang kamu suka"></textarea>
+         </div><button type="submit" id="feedback_submit" class="focus-ring rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-100 border border-slate-700 hover:bg-slate-800"> Kirim Penilaian </button>
+         <p id="feedback_status" class="text-[11px] text-emerald-300 mt-1 hidden">Terima kasih untuk penilaianmu (simulasi).</p>
+        </form>
+       </article>
+      </section><section id="share" class="reveal rounded-2xl border border-slate-800 bg-slate-950/80 px-5 py-4">
+       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+         <h2 class="text-sm md:text-base font-semibold text-slate-50">Bagikan ke Teman</h2>
+         <p class="text-xs text-slate-400">Biar nongkrong makin ramai dengan cemilan kriuk.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs"><button class="focus-ring inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-slate-100 border border-slate-700"> <span aria-hidden="true">📱</span><span>WhatsApp</span> </button> <button class="focus-ring inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-slate-100 border border-slate-700"> <span aria-hidden="true">📷</span><span>Instagram</span> </button> <button class="focus-ring inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-slate-100 border border-slate-700"> <span aria-hidden="true">📘</span><span>Facebook</span> </button> <button class="focus-ring inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-slate-100 border border-slate-700"> <span aria-hidden="true">🔗</span><span>Salin Link</span> </button>
+        </div>
+       </div>
+      </section>
+     </div>
+    </main><footer class="border-t border-slate-800 bg-slate-950/90">
+     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center justify-between gap-3 text-[11px] text-slate-500">
+      <p id="footer_text">© 2025 Premium Snack Store. Basreng &amp; Usus Crispy — dibuat dengan penuh rasa.</p>
+      <div class="flex flex-wrap gap-3"><span>SEO Friendly Structure</span> <span>Analytics Demo Integrated</span>
+      </div>
+     </div>
+    </footer>
+   </div><button id="chat_toggle" class="focus-ring fixed bottom-4 right-4 z-30 rounded-full bg-cyan-500 text-slate-900 w-12 h-12 flex items-center justify-center text-2xl shadow-xl chat-pulse"> 💬 <span class="sr-only">Buka chat bantuan</span> </button> <section id="chat_panel" class="fixed bottom-20 right-4 w-72 max-w-[90%] rounded-2xl border border-slate-800 bg-slate-950/95 text-xs text-slate-100 shadow-xl hidden">
+    <header class="px-3 py-2 border-b border-slate-800 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-6 h-6 rounded-full bg-cyan-400 flex items-center justify-center text-slate-900 text-sm font-bold">
+       B
+      </div>
+      <div>
+       <p class="text-[11px] font-semibold">SnackBot</p>
+       <p class="text-[10px] text-emerald-300">Online • bantu pilih rasa</p>
+      </div>
+     </div><button id="chat_close" class="focus-ring text-slate-400 text-sm">✕</button>
+    </header>
+    <div id="chat_messages" class="px-3 py-2 max-h-52 overflow-y-auto space-y-2">
+     <div class="flex gap-2">
+      <div class="w-6 h-6 rounded-full bg-cyan-400 flex items-center justify-center text-slate-900 text-sm font-bold flex-shrink-0">
+       B
+      </div>
+      <div class="rounded-2xl bg-slate-900/90 px-3 py-1.5">
+       <p class="text-[11px]">Hai! Mau Basreng atau Usus Crispy? Tulis saja: <span class="text-cyan-300 font-medium">"saran rasa pedas"</span> atau <span class="text-cyan-300 font-medium">"rekomendasi hemat"</span>.</p>
+      </div>
+     </div>
+    </div>
+    <form id="chat_form" class="px-3 py-2 border-t border-slate-800 flex items-center gap-2"><label for="chat_input" class="sr-only">Ketik pesan</label> <input id="chat_input" type="text" class="focus-ring flex-1 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-[11px] text-slate-100" placeholder="Tanya apa saja..."> <button type="submit" class="focus-ring rounded-full bg-cyan-500 text-slate-900 w-8 h-8 flex items-center justify-center text-sm">➤</button>
+    </form>
+   </section><section id="video_modal" class="fixed inset-0 z-40 hidden items-center justify-center modal-backdrop">
+    <div class="w-11/12 max-w-2xl bg-slate-950 rounded-xl p-4 border border-slate-800 shadow-2xl relative">
+     <button id="video_close_btn" class="focus-ring absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-slate-800/80 text-slate-200">✕</button>
+     <div id="video_player_placeholder" class="aspect-video bg-slate-800 rounded-lg flex items-center justify-center text-slate-400">
+      ▶️ Video Demo Placeholder
+     </div>
+    </div>
+   </section>
+  </div>
+
+<script>
+    // 💡 STRUKTUR DATA PRODUK
+    // Ini adalah tempat Anda mengelola data katalog. Ganti 'imageUrl' dengan path gambar Anda.
+    const data_products = [
+        {
+            id: 1,
+            name: "Basreng Pedas Level 3",
+            desc: "Baso goreng premium renyah, bumbu pedas nendang Level 3.",
+            price: 5000,
+            tags: ["all", "basreng", "5000", "pedas"],
+            imageUrl: "basreng pedes.jpeg " // Ganti dengan path gambar Basreng Anda
+        },
+        {
+            id: 2,
+            name: "Basreng Original Gurih",
+            desc: "Baso goreng tanpa bumbu pedas, rasa gurih original.",
+            price: 3000,
+            tags: ["all", "basreng", "3000", "original"],
+            imageUrl: 'basreng ori.jpg' // Ganti dengan path gambar Basreng Anda
+        },
+        {
+            id: 3,
+            name: "Usus Crispy Original",
+            desc: "Usus ayam crispy dengan bumbu pedas, kriuk tahan lama.",
+            price: 5000,
+            tags: ["all", "usus", "5000", "original"],
+            imageUrl: "usus b aja.jpeg " // Ganti dengan path gambar Usus Anda
+        },
+        {
+            id: 4,
+            name: "Usus Crispy Pedas",
+            desc: "Usus ayam crispy dengan bumbu pedas, kriuk tahan lama.",
+            price: 5000,
+            tags: ["all", "usus", "5000", "pedas"],
+            imageUrl: "usus pedas.jpeg" // Ganti dengan path gambar Usus Anda
+        },
+  
+          
+      
+        // Anda bisa menambahkan produk baru di sini:
+        // { id: 5, name: "Basreng Bawang", desc: "Basreng rasa bawang putih gurih", price: 3000, tags: ["all", "basreng", "3000"], imageUrl: "gambar/basreng_bawang.jpg" }
+    ];
+
+    const productListEl = document.getElementById('product_list');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    let currentFilter = 'all';
+
+    // Fungsi untuk men-generate HTML produk dari data (TERMASUK GAMBAR)
+    function renderProducts(productsToRender) {
+        productListEl.innerHTML = '';
+        if (productsToRender.length === 0) {
+            productListEl.innerHTML = '<p class="col-span-full text-center text-slate-500 py-8">Tidak ada produk yang cocok dengan filter.</p>';
+            return;
+        }
+
+        productsToRender.forEach(product => {
+            const productCard = `
+                <article class="product-item rounded-2xl border border-slate-800 bg-slate-950/80 overflow-hidden reveal flex flex-col transition-all duration-300 transform hover:scale-[1.02] hover:shadow-cyan-500/10 hover:shadow-xl" data-tags="${product.tags.join(' ')}">
+                    <div class="h-40 bg-slate-800/60 overflow-hidden relative">
+                        <img src="${product.imageUrl}" alt="Gambar ${product.name}" class="w-full h-full object-cover transition-opacity duration-500 opacity-90 hover:opacity-100">
+                        <span class="absolute top-2 right-2 rounded-full bg-cyan-500/10 px-3 py-1 text-[10px] font-semibold text-cyan-300 border border-cyan-500/40">${product.tags.includes('5000') ? 'Rp5K' : 'Rp3K'}</span>
+                    </div>
+
+                    <div class="px-4 py-4 flex-1 flex flex-col justify-between">
+                        <div class="space-y-1 mb-3">
+                            <h3 class="text-sm font-semibold text-slate-50">${product.name}</h3>
+                            <p class="text-xs text-slate-400">${product.desc}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-800/70">
+                            <div>
+                                <p class="text-[10px] text-slate-400">Harga</p>
+                                <p class="text-base font-bold text-cyan-300">Rp${product.price.toLocaleString('id-ID')}</p>
+                            </div>
+                            <button data-product-id="${product.id}" class="focus-ring add-to-cart-btn inline-flex items-center gap-1 rounded-full bg-cyan-500/10 px-3 py-1.5 text-[11px] font-medium text-cyan-200 border border-cyan-500/40 hover:bg-cyan-500 hover:text-slate-900 transition-colors">
+                                <span>+ Keranjang</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+            productListEl.innerHTML += productCard;
+        });
+
+        // Terapkan animasi reveal setelah render
+        document.querySelectorAll('.product-item').forEach(el => el.classList.add('visible'));
+    }
+
+    // Fungsi untuk memfilter produk
+    function filterProducts(filterTag) {
+        currentFilter = filterTag;
+        filterButtons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === filterTag) {
+                btn.classList.replace('bg-slate-900/80', 'bg-cyan-500/10');
+                btn.classList.replace('border-slate-700', 'border-cyan-500/60');
+                btn.classList.remove('text-slate-200');
+                btn.classList.add('text-cyan-200');
+            } else {
+                btn.classList.replace('bg-cyan-500/10', 'bg-slate-900/80');
+                btn.classList.replace('border-cyan-500/60', 'border-slate-700');
+                btn.classList.remove('text-cyan-200');
+                btn.classList.add('text-slate-200');
+            }
+        });
+
+        const filtered = data_products.filter(product => product.tags.includes(filterTag));
+        renderProducts(filtered);
+    }
+
+    // Logika Lain (Simulasi)
+    
+    // Testimonial
+    const testimonials = [
+        { quote: "Basrengnya kriuk banget, bumbunya merata, pedasnya pas! Gak nyesel beli.", author: "Rina S.", rating: 5 },
+        { quote: "Usus crispynya enak dan gak berminyak. Harga 3 ribu tapi kualitas premium.", author: "Faisal A.", rating: 5 },
+        { quote: "Pelayanan cepat dan ramah. Pengiriman aman. Anak-anak suka yang original.", author: "Tari K.", rating: 4 },
+    ];
+    let currentTestimonialIndex = 0;
+    const testimonialContainer = document.getElementById('testimonial_container');
+
+    function renderTestimonial(index) {
+        testimonialContainer.innerHTML = '';
+        const item = testimonials[index];
+        const ratingStars = '⭐'.repeat(item.rating) + '★'.repeat(5 - item.rating);
+        const html = `
+            <div class="carousel-item active absolute inset-0 text-sm space-y-2">
+                <p class="text-slate-200 italic">"${item.quote}"</p>
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                    <p class="font-semibold text-cyan-300">— ${item.author}</p>
+                    <p aria-label="${item.rating} dari 5 bintang" class="text-base">${ratingStars}</p>
+                </div>
+            </div>
+        `;
+        testimonialContainer.innerHTML = html;
+
+        // Update dots
+        for (let i = 0; i < testimonials.length; i++) {
+            const dot = document.getElementById(`testimonial_dot_${i}`);
+            if (dot) {
+                dot.classList.toggle('bg-cyan-400', i === index);
+                dot.classList.toggle('bg-slate-600', i !== index);
+            }
+        }
+    }
+
+    function rotateTestimonials() {
+        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+        renderTestimonial(currentTestimonialIndex);
+    }
+
+    // DOM Ready and Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inisialisasi tampilan produk
+        renderProducts(data_products); 
+
+        // Inisialisasi Testimonial
+        renderTestimonial(currentTestimonialIndex);
+        setInterval(rotateTestimonials, 5000); 
+
+        // Event listeners untuk tombol filter
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterTag = button.getAttribute('data-filter');
+                filterProducts(filterTag);
+            });
+        });
+
+        // Toggle Sidebar Mobile
+        const mobileMenuBtn = document.getElementById('mobile_menu_btn');
+        const mobileSidebar = document.getElementById('mobile_sidebar');
+        const mobileSidebarClose = document.getElementById('mobile_sidebar_close');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileSidebar.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll body saat sidebar terbuka
+        });
+
+        mobileSidebarClose.addEventListener('click', () => {
+            mobileSidebar.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close sidebar when a navigation link is clicked (for mobile)
+        mobileSidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileSidebar.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Toggle Chatbot
+        const chatToggle = document.getElementById('chat_toggle');
+        const chatPanel = document.getElementById('chat_panel');
+        const chatClose = document.getElementById('chat_close');
+
+        chatToggle.addEventListener('click', () => {
+            chatPanel.classList.toggle('hidden');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatPanel.classList.add('hidden');
+        });
+
+        // Toggle Video Modal
+        const heroVideoBtn = document.getElementById('hero_video_btn');
+        const videoModal = document.getElementById('video_modal');
+        const videoCloseBtn = document.getElementById('video_close_btn');
+
+        heroVideoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            videoModal.classList.remove('hidden');
+            videoModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+
+        videoCloseBtn.addEventListener('click', () => {
+            videoModal.classList.add('hidden');
+            videoModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Simple Reveal on Scroll Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% is visible
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Simple Demo Form Submission Handlers (Stops form from actually submitting)
+        document.getElementById('checkout_form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('checkout_status').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('checkout_status').classList.add('hidden');
+                document.getElementById('checkout_form').reset();
+            }, 3000);
+        });
+
+        document.getElementById('contact_form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('contact_status').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('contact_status').classList.add('hidden');
+                document.getElementById('contact_form').reset();
+            }, 3000);
+        });
+
+        // Simple Cart Logic Demo
+        productListEl.addEventListener('click', function(e) {
+            const button = e.target.closest('.add-to-cart-btn');
+            if (button) {
+                const cartCountBadge = document.getElementById('cart_count_badge');
+                let currentCount = parseInt(cartCountBadge.textContent);
+                cartCountBadge.textContent = currentCount + 1;
+                
+                // Demo: Add item to summary
+                const productId = parseInt(button.getAttribute('data-product-id'));
+                const product = data_products.find(p => p.id === productId);
+                const summary = document.getElementById('checkout_summary');
+
+                const summaryItem = document.createElement('div');
+                summaryItem.className = 'flex justify-between items-center border-b border-slate-800/50 pb-1 last:border-b-0';
+                summaryItem.innerHTML = `<p class="text-xs text-slate-300">${product.name}</p><p class="text-xs font-medium text-cyan-300">1x</p>`;
+                
+                // Simple logic: if empty, clear 'kosong' message first
+                if (currentCount === 0) {
+                     summary.innerHTML = '';
+                }
+                summary.appendChild(summaryItem);
+
+                // Simple Visual feedback
+                button.innerHTML = '✨ Ditambahkan!';
+                setTimeout(() => {
+                    button.innerHTML = '<span>+ Keranjang</span>';
+                }, 800);
+            }
+        });
+
+        // Rating Logic (Feedback Form)
+        let selectedRating = 0;
+        document.querySelectorAll('.rating-star').forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.getAttribute('data-score'));
+                document.getElementById('feedback_rating').value = selectedRating;
+
+                // Highlight stars
+                document.querySelectorAll('.rating-star').forEach(s => {
+                    const score = parseInt(s.getAttribute('data-score'));
+                    if (score <= selectedRating) {
+                        s.classList.remove('text-slate-600');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-slate-600');
+                    }
+                });
+            });
+        });
+
+        document.getElementById('feedback_form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (selectedRating > 0) {
+                document.getElementById('feedback_status').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('feedback_status').classList.add('hidden');
+                    document.getElementById('feedback_form').reset();
+                    // Reset stars
+                    document.querySelectorAll('.rating-star').forEach(s => {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-slate-600');
+                    });
+                    selectedRating = 0;
+                }, 3000);
+            } else {
+                alert('Mohon berikan rating (bintang) terlebih dahulu.');
+            }
+        });
+    });
+</script>
+</body>
+</html>
